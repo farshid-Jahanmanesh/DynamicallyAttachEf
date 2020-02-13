@@ -4,13 +4,9 @@ public class PersonalSiteContext : DbContext
         {
         }
         
-        public override DbSet Set(Type entityType)
+       public override DbSet<TEntity> Set<TEntity>()
         {
-            var type = Assembly.GetExecutingAssembly().GetTypes().FirstOrDefault(t => t.Name ==entityType.Name);
-            if (type != null)
-                return base.Set(type);
-            else
-                return null;
+            return base.Set<TEntity>();
         }
         
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
