@@ -12,7 +12,8 @@ public class PersonalSiteContext : DbContext
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.AttachDbSet();
             modelBuilder.AttachConfig();
+            modelBuilder.AttachDbSet();
+            
         }
     }
