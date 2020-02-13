@@ -19,3 +19,6 @@ Entities class must have an attribute in the name of DbSetAttach
 
 
 for getting data from your Dbset You Can override set method in Your Context class and use it.
+
+
+One important point is that you must first modelBuilder.AttachConfig(); than after it modelBuilder.AttachDbSet();
